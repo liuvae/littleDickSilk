@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function show(id){
+		document.getElementById(id).className="modal show";
+	};
+	function notshow(id){
+		document.getElementById(id).className="modal fade";
+	};
+	function loginsuccess(){
+		notshow("denglu");
+		document.getElementById("login-div").innerHTML="<font color='green'>欢迎,优优!</font>";
+		document.getElementById("zhuce-div").innerHTML='<button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'jinggao\')">新增</button>';
+		document.getElementById("table-div").innerHTML="<table class='table table-striped'>"+
+		  "<thead>"+
+		  "<tr>"+
+		  '<td style="text-align:center;">图片</td>'+
+		  '<td style="text-align:center;">名字</td>'+
+		  '<td style="text-align:center;">入手时间</td>'+
+		  '<td style="text-align:center;">操作</td>'+
+		  "</tr>"+
+		  "</thead>"+
+		  "<tbody>"+
+		  "<tr>"+
+		  '<td style="text-align:center;">图片裂了</td>'+
+		  '<td style="text-align:center;">智利火玫瑰</td>'+
+		  '<td style="text-align:center;">2019-10-07</td>'+
+		  '<td style="text-align:center;"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'xiangqing\')">详情</button><button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'jinggao\')">记录</button></td>'+
+		  "</tr>"+
+		  "<tr>"+
+		  '<td style="text-align:center;">图片裂了</td>'+
+		  '<td style="text-align:center;">墨西哥红膝头</td>'+
+		  '<td style="text-align:center;">2019-10-07</td>'+
+		  '<td style="text-align:center;"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'xiangqing\')">详情</button><button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'jinggao\')">记录</button></td>'+
+		  "</tr>"+
+		  "<tr>"+
+		  '<td style="text-align:center;">图片裂了</td>'+
+		  '<td style="text-align:center;">梦幻巴布</td>'+
+		  '<td style="text-align:center;">2019-10-07</td>'+
+		  '<td style="text-align:center;"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'xiangqing\')">详情</button><button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'jinggao\')">记录</button></td>'+
+		  "</tr>"+
+		  "<tr>"+
+		  '<td style="text-align:center;">图片裂了</td>'+
+		  '<td style="text-align:center;">皇帝巴布</td>'+
+		  '<td style="text-align:center;">2019-10-07</td>'+
+		  '<td style="text-align:center;"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'xiangqing\')">详情</button><button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show(\'jinggao\')">记录</button></td>'+
+		  "</tr>"+
+		  "</tbody>"+
+		  "</table>";
+		document.getElementById("login-div").innerHTML="<font color='green'>欢迎,优优!</font>";
+	}
+	function login(){
+		var ln=document.getElementById("recipient-name").value;
+		var pw=document.getElementById("recipient-password").value;
+		if('youyou520'==ln & 'love1314'== pw){
+			loginsuccess();
+		}else{
+			loginsuccess();
+		}
+	};
+
+</script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/css/bootstrap.min.css" >
+<link rel="stylesheet" href="./css/css/bootstrap-theme.min.css">
+<script src="./css/js/bootstrap.min.js"></script>
+<title>Arachnids' Home</title>
+</head>
+<body>
+<div class="container-fluid" >
+	<div class="row" style="background:#000; color:#FFF;height:80px;">
+	  <div class="col-md-9" style="background:#000; color:#FFF;height:80px;bottom:0;">
+	  	 <h1><font color="orange"> Arachnids' Home</font>		<small>for vae</small></h1>
+	  	<!-- <font color="orange" size=18>ArachnidHome</font> -->
+	  </div>
+	  <div id="login-div" class="col-md-2" style="background:#000; color:#FFF;height:80px;">
+	  	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show('denglu')">登录</button>
+	  </div>
+	  <div id="zhuce-div" class="col-md-1" style="background:#000; color:#FFF;height:80px;">
+	  	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="show('jinggao')">注册</button>
+	  </div>
+	</div>
+	<div id="table-div" class="row">
+	  <font color="lightseagreen" size="15">你还没有登录,无法获取列表哦!</font>
+	</div>
+</div>
+
+<div id="denglu" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ><span aria-hidden="true" onclick="notshow('denglu')">&times;</span></button>
+        <h4 class="modal-title">登录</h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">用户名:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">密码:</label>
+            <input type="password" class="form-control" id="recipient-password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="login()">登录</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="jinggao" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ><span aria-hidden="true" onclick="notshow('jinggao')">&times;</span></button>
+        <h4 class="modal-title">警告</h4>
+      </div>
+      <div class="modal-body">
+      	<font color="red" size=14>没做,程序员永不加班!!!</font>
+      </div>
+          
+  	</div>
+  </div>
+</div>
+
+<div id="xiangqing" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ><span aria-hidden="true" onclick="notshow('xiangqing')">&times;</span></button>
+        <h4 class="modal-title">详情</h4>
+      </div>
+      <div class="modal-body">
+          <table class="table table-striped">
+          	<thead>
+          		<tr>
+          			<td>日期</td>
+          			<td>图片</td>
+          			<td>描述</td>
+          		</tr>
+          	</thead>
+          	<tbody>
+          		<tr>
+          			<td>2016-12-12</td>
+          			<td>图片裂了</td>
+          			<td>火玫瑰第一次到家!</td>
+          		</tr>
+          		<tr>
+          			<td>2017-01-20</td>
+          			<td>图片裂了</td>
+          			<td>火玫瑰蜕皮进入4l!</td>
+          		</tr>
+          		<tr>
+          			<td>2017-03-12</td>
+          			<td>图片裂了</td>
+          			<td>火玫瑰蜕皮进入5l!</td>
+          		</tr>
+          	</tbody>
+		  </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
